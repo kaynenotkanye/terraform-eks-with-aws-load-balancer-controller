@@ -7,7 +7,7 @@ variable "name" {
 
 variable "region" {
   type        = string
-  default     = "us-east-1"
+  default     = "us-east-2"
   description = "Region where this stack will be deployed."
 }
 variable "cidr_block" {
@@ -16,7 +16,7 @@ variable "cidr_block" {
   description = "The CIDR block for the VPC."
 }
 variable "availability_zones" {
-  default = ["us-east-1b", "us-east-1c"]
+  default = ["us-east-2b", "us-east-2c"]
   description = "The availability zones to create subnets in"
 }
 

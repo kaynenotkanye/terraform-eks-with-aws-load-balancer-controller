@@ -1,6 +1,6 @@
 #!/bin/bash
 
-AWS_REGION=us-east-1
+AWS_REGION=us-east-2
 EKS_CLUSTER_NAME=eks-bottlerocket-imnr
 ACCOUNT_ID=$(aws sts get-caller-identity | grep Arn | awk -F: '{print $6}')
 
