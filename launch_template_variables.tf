@@ -26,8 +26,7 @@ variable "bottlerocket_admin_source" {
 
 variable "instance_size" {
   type        = string
-  #default     = "large"
-  default     = "m5.large"
+  default = "t3.large"
   description = "The size of instances in this node group"
 }
 

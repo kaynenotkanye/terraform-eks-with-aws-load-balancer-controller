@@ -32,6 +32,7 @@ resource "aws_iam_role_policy_attachment" "cluster_AmazonEKSServicePolicy" {
 
 
 # Resource to create eks worker node role
+# EKS-eks-bottlerocket-imnr-worker-node-role needs more permissions to create ALBs
 
 resource "aws_iam_role" "managed_workers" {
   name = "EKS-${var.name}-worker-node-role"
@@ -75,13 +76,55 @@ resource "aws_iam_role_policy" "set_name_tag" {
   {
     "Version": "2012-10-17",
     "Statement": [
-      {
-        "Action": [
-          "ec2:CreateTags"
-        ],
-        "Effect": "Allow",
-        "Resource": "*"
-      }
+        {
+            "Effect": "Allow",
+            "Action": [
+                "iam:CreateServiceLinkedRole"
+            ],
+            "Resource": "*",
+            "Condition": {
+                "StringEquals": {
+                    "iam:AWSServiceName": "elasticloadbalancing.amazonaws.com"
+                }
+            }
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:Describe*",
+                "ec2:Get*",
+                "elasticloadbalancing:Describe*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "cognito-idp:Describe*",
+                "acm:List*",
+                "acm:Describe*",
+                "iam:List*",
+                "iam:Get*",
+                "waf-regional:*",
+                "wafv2:*",
+                "shield:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "ec2:*"
+            ],
+            "Resource": "*"
+        },
+        {
+            "Effect": "Allow",
+            "Action": [
+                "elasticloadbalancing:*"
+            ],
+            "Resource": "*"
+        }
     ]
   }
   EOF

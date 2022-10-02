@@ -1,6 +1,6 @@
 ## Setup Bottlerocket Managed Node Group on EKS with Terraform
 
-This is a hard-fork of https://github.com/aws-samples/amazon-eks-bottlerocket-mngnodegrp-terraform with my own custom modifications to include the AWS Load Balancer Controller, which will allow Kubernetes ingresses and AWS Application Load Balancer integrations. It also includes some sample apps and some simple testing with NoseJS Puppeteer. A full pipeline is also kicked off through Github Actions. This project is meant as a working example only as it can be potentially split up into separate repositories. A single repository is used here just to keep things simple.
+This is a hard-fork of https://github.com/aws-samples/amazon-eks-bottlerocket-mngnodegrp-terraform with my own custom modifications to include the AWS Load Balancer Controller, which will allow Kubernetes ingresses and AWS Application Load Balancer integrations. It also includes some sample apps and some simple testing with NoseJS Puppeteer. A full pipeline is also kicked off through Github Actions. This project is meant as a working example only as it can be potentially split up into separate repositories. A single repository is used here just to keep things simple. Some bash scripts were taken from another one of my projects (StackStorm on AKS) https://github.com/kaynenotkanye/stackstorm-on-aks
 
 ## Prerequisites
 
