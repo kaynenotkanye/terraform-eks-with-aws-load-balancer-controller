@@ -39,10 +39,10 @@ variable "fstype" {
 
 variable "eks_version" {
   type    = string
-  default = "1.20" # kubernetesVersion
+  default = "1.24" # kubernetesVersion
 }
 
 variable "nodegroup_version" {
   type    = string
-  default = "1.20" # workerNodeGroupVersion
+  default = "1.24" # workerNodeGroupVersion
 }

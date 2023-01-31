@@ -30,8 +30,8 @@ helm install aws-load-balancer-controller eks/aws-load-balancer-controller \
 kubectl get serviceaccounts -n kube-system | grep aws-load-balancer-controller
 sleep 30
 
-# Create k8s namespace for the 2048 game
-kubectl create namespace 2048-game
+# Create k8s namespace for 2048
+kubectl create namespace 2048
 
 # Deploy helm charts for 2048
 kubectl apply -f ./2048

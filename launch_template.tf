@@ -80,3 +80,11 @@ resource "aws_launch_template" "bottlerocket_lt" {
     create_before_destroy = true
   }
 }
+
+output "ssm_bottlerocket_image_name" {
+  value = data.aws_ssm_parameter.bottlerocket_image_id.name
+}
+
+output "ssm_bottlerocket_image_id" {
+  value = nonsensitive(data.aws_ssm_parameter.bottlerocket_image_id.value)
+}
