@@ -5,17 +5,19 @@ on:
 jobs:
   job1:
     name: terraform-eks
-    runs-on: self-hosted
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v2
         with:
           path: main
-      - name: Provision VPC and EKS cluster
-        run: cd main && ./1-deploy-infra.sh
-      - name: Deploy apps
-        run: cd main && ./2-deploy-apps.sh
-      - name: Run Helm tests
-        run: cd main && ./3-run-tests.sh
-      - name: Run Puppeteer tests
-        run: cd main && ./4-run-puppeteer-tests.sh
+      - name: No longer maintained
+        run: echo "I no longer run my own EKS cluster, but it used to work!"
+      #- name: Provision VPC and EKS cluster
+        #run: cd main && ./1-deploy-infra.sh
+      #- name: Deploy apps
+        #run: cd main && ./2-deploy-apps.sh
+      #- name: Run Helm tests
+        #run: cd main && ./3-run-tests.sh
+      #- name: Run Puppeteer tests
+        #run: cd main && ./4-run-puppeteer-tests.sh
